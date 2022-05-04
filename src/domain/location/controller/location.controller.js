@@ -1,11 +1,11 @@
-const { response } = require('express');
+const { response } = require('express')
 
 const getLocation = (req, res = response) => {
-  res.json({
-    message: 'location controller'
-  })
+	res.json({
+		message: 'location controller'
+	})
 }
 
 module.exports = {
-  getLocation
+	getLocation
 }

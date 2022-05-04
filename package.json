@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node ./src/app",
     "dev:watch": "nodemon ./src/app",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint \"{src,test}/**/*.js\" --fix"
   },
   "author": "Rene Nicolas Palenque",
   "license": "ISC",
@@ -17,6 +18,7 @@
     "swagger-ui-express": "^4.3.0"
   },
   "devDependencies": {
+    "eslint": "^8.14.0",
     "nodemon": "^2.0.16"
   }
 }
