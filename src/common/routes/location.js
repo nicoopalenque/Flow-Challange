@@ -1,12 +1,12 @@
-const { Router } = require('express');
+const { Router } = require('express')
 
 const {
-  getLocation
-} = require('../../domain/location/controller/location.controller');
+	getLocation
+} = require('../../domain/location/controller/location.controller')
 
-const router = Router();
+const router = Router()
 
 
-router.get('/location', getLocation);
+router.get('/location', getLocation)
 
-module.exports = router;
+module.exports = router
