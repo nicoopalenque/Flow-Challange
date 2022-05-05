@@ -3,6 +3,7 @@ const { Router } = require('express');
 const {
   getLocation
 } = require('../../domain/location/controller/location.controller');
+const { LOCATION_PATH } = require('../constants/constants');
 
 const router = Router();
 
@@ -15,6 +16,6 @@ const router = Router();
  *        200:
  *          description: success location
  */
-router.get('/location', getLocation);
+router.get(`${LOCATION_PATH}`, getLocation);
 
 module.exports = router;

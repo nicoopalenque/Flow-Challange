@@ -4,6 +4,8 @@ const {
   getWeather
 } = require('../../domain/weather/controller/weather.controller');
 
+const { WEATHER_PATH } = require('../constants/constants');
+
 const router = Router();
 
 /**
@@ -31,6 +33,6 @@ const router = Router();
  *      200:
  *        description: success location
  */
-router.get('/current/:city?', getWeather);
+router.get(`${WEATHER_PATH}`, getWeather);
 
 module.exports = router;
