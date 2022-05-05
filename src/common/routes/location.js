@@ -8,12 +8,12 @@ const router = Router();
 
 /**
  * @swagger
- * /v1/location:
- *  get:
- *    description: Get location
- *    responses:
- *      200:
- *        description: success location
+ *  /v1/location:
+ *    get:
+ *     description: Get location
+ *     responses:
+ *        200:
+ *          description: success location
  */
 router.get('/location', getLocation);
 
