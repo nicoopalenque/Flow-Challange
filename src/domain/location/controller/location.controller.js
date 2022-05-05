@@ -3,7 +3,7 @@ const { apiLocation } = require('../service/location.service');
 
 const getLocation = async (req, res = response) => {
   const response = await apiLocation();
-  res.json(response);
+  res.status(response.cod).json(response);
 };
 
 module.exports = {

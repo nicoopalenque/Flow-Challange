@@ -28,6 +28,7 @@ const apiWeather = async (city) => {
   return axios.get(`${WEATHER_URL}/weather`, { params })
     .then((response) => {
       return {
+        cod: response.data.cod,
         ciudad: response.data.name,
         descripcion: response.data.weather[0].description,
         clima: {

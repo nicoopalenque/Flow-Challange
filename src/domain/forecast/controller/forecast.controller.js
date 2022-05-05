@@ -5,7 +5,7 @@ const getForecast = async (req, res = response) => {
   const { city } = req.params;
 
   const response = await apiForecast(city);
-  res.json(response);
+  res.status(parseInt(response.cod)).json(response);
 
 };
 

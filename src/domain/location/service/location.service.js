@@ -6,6 +6,7 @@ const apiLocation = () => {
   return axios.get(LOCATION_URL)
     .then((response) => {
       return {
+        cod: 200,
         pais: response.data.country,
         ciudad: response.data.city,
         provincia: response.data.regionName,

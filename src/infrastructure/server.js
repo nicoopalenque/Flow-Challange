@@ -2,6 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
+const morgan = require('morgan');
+
+const { swaggerOptions } = require('./config/swagger');
 const { SERVER_PORT, HOST, ROOT_PATH } = require('../common/constants/constants');
 class Server {
 
@@ -23,20 +26,8 @@ class Server {
         
     this.app.use(express.json());
 
-    const swaggerOptions = {
-      swaggerDefinition: {
-        info: {
-          title: 'Teco challenge',
-          description: 'Teco Challenge',
-          contact: {
-            name: 'Rene Nicolas Palenque'
-          },
-          servers: ['http://localhost:3000']
-        }
-      },
-      apis: ['src/common/routes/*.js']
-    };
-
+    this.app.use(morgan('dev'));
+    
     const swaggerDocs = swaggerJsDoc(swaggerOptions);
     this.app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
   }
