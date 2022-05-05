@@ -44,6 +44,7 @@ class Server {
   routes() {
     this.app.use(this.basePath, require('../common/routes/location'));
     this.app.use(this.basePath, require('../common/routes/weather'));
+    this.app.use(this.basePath, require('../common/routes/forecast'));
   }
 
   listen() {

@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node ./src/app",
     "dev:watch": "nodemon ./src/app",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --verbose",
+    "coverage": "jest --coverage --verbose",
     "lint": "eslint \"{src,test}/**/*.js\" --fix"
   },
   "author": "Rene Nicolas Palenque",
