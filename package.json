@@ -6,17 +6,23 @@
   "scripts": {
     "dev": "node ./src/app",
     "dev:watch": "nodemon ./src/app",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint \"{src,test}/**/*.js\" --fix"
   },
   "author": "Rene Nicolas Palenque",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.27.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.18.1",
+    "swagger-generator-express": "^2.1.1",
+    "swagger-jsdoc": "^6.2.1",
     "swagger-ui-express": "^4.3.0"
   },
   "devDependencies": {
+    "eslint": "^8.14.0",
+    "jest": "^28.0.3",
     "nodemon": "^2.0.16"
   }
 }
