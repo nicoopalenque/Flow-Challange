@@ -22,6 +22,8 @@
 - [Docker](#docker)
 - [Endpoints](#endpoints)
 - [Test](#test)
+- [Issues](#issues)
+- [Author](#autor)
 
 ---
 
@@ -165,6 +167,13 @@ $ npm run coverage
 ---
 
 ⬅️ [Back](#contenido)
+
+---
+## Issues
+
+La url para obtener el clima a 5 dias no me permite consultarla con una suscripcion gratuita,
+asi que coloque otra consulta que devuelve algo similar solo que en lugar de devolver a 5 dias
+lo hace a 3 horas. Por lo que estuve viendo la logica seria basicamente la misma.
 
 ---
 

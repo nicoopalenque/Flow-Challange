@@ -5,7 +5,7 @@ const getWeather = async (req, res = response) => {
   const { city } = req.params;
 
   const response = await apiWeather(city);
-  res.json(response);
+  res.status(parseInt(response.cod)).json(response);
 };
 
 module.exports = {

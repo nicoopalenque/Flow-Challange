@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1651722136951" clover="3.2.0">
-  <project timestamp="1651722136951" name="All files">
+<coverage generated="1651773391601" clover="3.2.0">
+  <project timestamp="1651773391601" name="All files">
     <metrics statements="59" coveredstatements="59" conditionals="7" coveredconditionals="7" methods="12" coveredmethods="12" elements="78" coveredelements="78" complexity="0" loc="59" ncloc="59" packages="6" files="6" classes="6"/>
     <package name="forecast.controller">
       <metrics statements="7" coveredstatements="7" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
@@ -38,8 +38,8 @@
         <line num="39" count="15" type="stmt"/>
         <line num="40" count="15" type="stmt"/>
         <line num="42" count="3" type="stmt"/>
-        <line num="49" count="1" type="stmt"/>
-        <line num="78" count="2" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="54" count="2" type="stmt"/>
       </file>
     </package>
     <package name="location.controller">
@@ -63,7 +63,7 @@
         <line num="5" count="6" type="stmt"/>
         <line num="6" count="6" type="stmt"/>
         <line num="8" count="6" type="stmt"/>
-        <line num="19" count="6" type="stmt"/>
+        <line num="20" count="6" type="stmt"/>
       </file>
     </package>
     <package name="weather.controller">
@@ -93,8 +93,8 @@
         <line num="20" count="2" type="stmt"/>
         <line num="28" count="4" type="stmt"/>
         <line num="30" count="3" type="stmt"/>
-        <line num="42" count="1" type="stmt"/>
-        <line num="46" count="2" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="47" count="2" type="stmt"/>
       </file>
     </package>
   </project>
