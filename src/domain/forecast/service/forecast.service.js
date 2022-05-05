@@ -27,6 +27,11 @@ const apiForecast = async (city) => {
     };
   }
 
+  /**
+   * La url para obtener el clima a 5 dias no me permite consultarla con una suscripcion gratuita,
+   * asi que coloque esta otra consulta que devuelve algo similar solo que en lugar de devolver a 5 dias
+   * lo hace a 3 horas. Por lo que estuve viendo la logica seria basicamente la misma.
+   */
   return axios.get(`${WEATHER_URL}/forecast`, { params })
     .then((response) => {
       const forecast = response.data.list.map((element) => {
@@ -40,6 +45,7 @@ const apiForecast = async (city) => {
         return weather;
       });
       return {
+        cod: response.data.cod,
         pais: response.data.city.country,
         ciudad: response.data.city.name,
         clima: forecast
@@ -48,31 +54,6 @@ const apiForecast = async (city) => {
     .catch((error) => {
       return error.response.data;
     });
-  // try {
-  //   const instance = axios.create({
-  //     baseURL: `${WEATHER_URL}/forecast`,
-  //     params
-  //   });
-
-  //   const resp = await instance.get();
-  //   const forecast = resp.data.list.map((element) => {
-  //     const weather = {};
-  //     weather['fecha'] = element.dt_txt;
-  //     weather['descripcion'] = element.weather.descripction;
-  //     weather['max'] = element.main.temp_max;
-  //     weather['min'] = element.main.temp_min;
-  //     weather['sensacion_termica'] = element.main.feels_like;
-  //     weather['humedad'] = element.main.humidity;
-  //     return weather;
-  //   });
-  //   return {
-  //     pais: resp.data.city.country,
-  //     ciudad: resp.data.city.name,
-  //     clima: forecast
-  //   };
-  // } catch (error) {
-  //   return error;
-  // }
 };
 
 module.exports = { apiForecast };

@@ -1,4 +1,5 @@
 exports.locationResponse = {
+  'cod': 200,
   'pais': 'Argentina',
   'ciudad': 'San Pedro de Jujuy',
   'provincia': 'Jujuy',

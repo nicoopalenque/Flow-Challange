@@ -66,15 +66,15 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "123"
+							"value": "133"
 						},
 						{
 							"key": "ETag",
-							"value": "W/\"7b-Yieh8XelQRr/iaAtZgWJSs3VLl8\""
+							"value": "W/\"85-WTZKKeDIS1Iw0Sc5wmqabSllB4k\""
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 05 May 2022 02:15:46 GMT"
+							"value": "Thu, 05 May 2022 17:58:47 GMT"
 						},
 						{
 							"key": "Connection",
@@ -86,7 +86,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"pais\": \"Argentina\",\n    \"ciudad\": \"San Pedro de Jujuy\",\n    \"provincia\": \"Jujuy\",\n    \"codigo_postal\": \"4500\",\n    \"lat\": -24.2318,\n    \"lon\": -64.8678\n}"
+					"body": "{\n    \"cod\": 200,\n    \"pais\": \"Argentina\",\n    \"ciudad\": \"San Pedro de Jujuy\",\n    \"provincia\": \"Jujuy\",\n    \"codigo_postal\": \"4500\",\n    \"lat\": -24.2318,\n    \"lon\": -64.8678\n}"
 				}
 			]
 		},
@@ -113,7 +113,131 @@
 			},
 			"response": [
 				{
-					"name": "GET Current by IP",
+					"name": "GET Current city not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/v1/current/jujuy",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"current",
+								"jujuy"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-fChUQzd1n5+YYLdoF7GM7eEx1lo\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 May 2022 17:58:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"cod\": \"404\",\n    \"message\": \"city not found\"\n}"
+				},
+				{
+					"name": "GET Current by city",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/v1/current/Cordoba",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"current",
+								"Cordoba"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "138"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"8a-qsmXAV9XDqsVYIG0taQiCLafsk4\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 May 2022 18:00:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"cod\": 200,\n    \"ciudad\": \"Córdoba\",\n    \"descripcion\": \"cielo claro\",\n    \"clima\": {\n        \"maxima\": 29.31,\n        \"minima\": 23.47,\n        \"sensacion_termica\": 27.67,\n        \"humedad\": 19\n    }\n}"
+				},
+				{
+					"name": "GET Current by ip",
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
@@ -151,15 +275,15 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "138"
+							"value": "148"
 						},
 						{
 							"key": "ETag",
-							"value": "W/\"8a-WWmxDH3I63G9QC9DynZ7RlU5ivU\""
+							"value": "W/\"94-ydlaLid+Oghz7IhikgnFb37bJbM\""
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 05 May 2022 02:49:56 GMT"
+							"value": "Thu, 05 May 2022 18:00:51 GMT"
 						},
 						{
 							"key": "Connection",
@@ -171,69 +295,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"ciudad\": \"San Pedro de Jujuy\",\n    \"descripcion\": \"cielo claro\",\n    \"clima\": {\n        \"maxima\": 11.05,\n        \"minima\": 11.05,\n        \"sensacion_termica\": 10.33,\n        \"humedad\": 81\n    }\n}"
-				},
-				{
-					"name": "GET Current by city",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://127.0.0.1:3000/v1/current/cordoba",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "3000",
-							"path": [
-								"v1",
-								"current",
-								"cordoba"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "125"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"7d-hTS9w+iUQCXGEa8suLjLe1uhJ4U\""
-						},
-						{
-							"key": "Date",
-							"value": "Thu, 05 May 2022 02:50:13 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"ciudad\": \"Córdoba\",\n    \"descripcion\": \"cielo claro\",\n    \"clima\": {\n        \"maxima\": 11.8,\n        \"minima\": 9.47,\n        \"sensacion_termica\": 7.55,\n        \"humedad\": 71\n    }\n}"
+					"body": "{\n    \"cod\": 200,\n    \"ciudad\": \"San Pedro de Jujuy\",\n    \"descripcion\": \"cielo claro\",\n    \"clima\": {\n        \"maxima\": 23.05,\n        \"minima\": 23.05,\n        \"sensacion_termica\": 22.35,\n        \"humedad\": 36\n    }\n}"
 				}
 			]
 		},
@@ -260,7 +322,131 @@
 			},
 			"response": [
 				{
-					"name": "GET Forecast by IP",
+					"name": "GET Forecast city not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/v1/forecast/jujuy",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"forecast",
+								"jujuy"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-fChUQzd1n5+YYLdoF7GM7eEx1lo\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 May 2022 18:01:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"cod\": \"404\",\n    \"message\": \"city not found\"\n}"
+				},
+				{
+					"name": "GET Forecast by city",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/v1/forecast/Cordoba",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"forecast",
+								"Cordoba"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "529"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"211-ShPYpzDf9PkEK1g+sto2sAMMG5U\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 May 2022 18:01:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"cod\": \"200\",\n    \"pais\": \"AR\",\n    \"ciudad\": \"Córdoba\",\n    \"clima\": [\n        {\n            \"fecha\": \"2022-05-05 18:00:00\",\n            \"max\": 27.66,\n            \"min\": 26.49,\n            \"sensacion_termica\": 26.6,\n            \"humedad\": 23\n        },\n        {\n            \"fecha\": \"2022-05-05 21:00:00\",\n            \"max\": 26.05,\n            \"min\": 22.82,\n            \"sensacion_termica\": 26.05,\n            \"humedad\": 25\n        },\n        {\n            \"fecha\": \"2022-05-06 00:00:00\",\n            \"max\": 19.88,\n            \"min\": 15.99,\n            \"sensacion_termica\": 18.86,\n            \"humedad\": 36\n        },\n        {\n            \"fecha\": \"2022-05-06 03:00:00\",\n            \"max\": 14.41,\n            \"min\": 14.41,\n            \"sensacion_termica\": 13.06,\n            \"humedad\": 44\n        },\n        {\n            \"fecha\": \"2022-05-06 06:00:00\",\n            \"max\": 13.96,\n            \"min\": 13.96,\n            \"sensacion_termica\": 12.59,\n            \"humedad\": 45\n        }\n    ]\n}"
+				},
+				{
+					"name": "GET Forecast by ip",
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
@@ -298,15 +484,15 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "523"
+							"value": "540"
 						},
 						{
 							"key": "ETag",
-							"value": "W/\"20b-awD+1Is3oyIcZtRvEwTHGCD+sFw\""
+							"value": "W/\"21c-gozEp1XteEfwpbQDzI2lObtuSxY\""
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 05 May 2022 03:15:11 GMT"
+							"value": "Thu, 05 May 2022 18:01:51 GMT"
 						},
 						{
 							"key": "Connection",
@@ -318,69 +504,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"pais\": \"AR\",\n    \"ciudad\": \"San Pedro de Jujuy\",\n    \"clima\": [\n        {\n            \"fecha\": \"2022-05-05 06:00:00\",\n            \"max\": 10.93,\n            \"min\": 10.7,\n            \"sensacion_termica\": 10.25,\n            \"humedad\": 83\n        },\n        {\n            \"fecha\": \"2022-05-05 09:00:00\",\n            \"max\": 10.26,\n            \"min\": 9.86,\n            \"sensacion_termica\": 9.59,\n            \"humedad\": 86\n        },\n        {\n            \"fecha\": \"2022-05-05 12:00:00\",\n            \"max\": 13.4,\n            \"min\": 13.4,\n            \"sensacion_termica\": 12.65,\n            \"humedad\": 71\n        },\n        {\n            \"fecha\": \"2022-05-05 15:00:00\",\n            \"max\": 20.97,\n            \"min\": 20.97,\n            \"sensacion_termica\": 20.22,\n            \"humedad\": 42\n        },\n        {\n            \"fecha\": \"2022-05-05 18:00:00\",\n            \"max\": 23.93,\n            \"min\": 23.93,\n            \"sensacion_termica\": 23.32,\n            \"humedad\": 36\n        }\n    ]\n}"
-				},
-				{
-					"name": "GET Forecast by city",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://127.0.0.1:3000/v1/forecast/cordoba",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "3000",
-							"path": [
-								"v1",
-								"forecast",
-								"cordoba"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "512"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"200-1Xi7dceGmtSBultxC5dcIUUlQHk\""
-						},
-						{
-							"key": "Date",
-							"value": "Thu, 05 May 2022 03:15:24 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"pais\": \"AR\",\n    \"ciudad\": \"Córdoba\",\n    \"clima\": [\n        {\n            \"fecha\": \"2022-05-05 06:00:00\",\n            \"max\": 11.63,\n            \"min\": 8.19,\n            \"sensacion_termica\": 6.9,\n            \"humedad\": 70\n        },\n        {\n            \"fecha\": \"2022-05-05 09:00:00\",\n            \"max\": 10.79,\n            \"min\": 9.35,\n            \"sensacion_termica\": 8.2,\n            \"humedad\": 61\n        },\n        {\n            \"fecha\": \"2022-05-05 12:00:00\",\n            \"max\": 13.26,\n            \"min\": 13.26,\n            \"sensacion_termica\": 11.82,\n            \"humedad\": 45\n        },\n        {\n            \"fecha\": \"2022-05-05 15:00:00\",\n            \"max\": 22.59,\n            \"min\": 22.59,\n            \"sensacion_termica\": 21.56,\n            \"humedad\": 25\n        },\n        {\n            \"fecha\": \"2022-05-05 18:00:00\",\n            \"max\": 26.53,\n            \"min\": 26.53,\n            \"sensacion_termica\": 26.53,\n            \"humedad\": 20\n        }\n    ]\n}"
+					"body": "{\n    \"cod\": \"200\",\n    \"pais\": \"AR\",\n    \"ciudad\": \"San Pedro de Jujuy\",\n    \"clima\": [\n        {\n            \"fecha\": \"2022-05-05 21:00:00\",\n            \"max\": 23.16,\n            \"min\": 21.16,\n            \"sensacion_termica\": 22.52,\n            \"humedad\": 38\n        },\n        {\n            \"fecha\": \"2022-05-06 00:00:00\",\n            \"max\": 17.63,\n            \"min\": 14.37,\n            \"sensacion_termica\": 16.83,\n            \"humedad\": 53\n        },\n        {\n            \"fecha\": \"2022-05-06 03:00:00\",\n            \"max\": 13.01,\n            \"min\": 13.01,\n            \"sensacion_termica\": 12.12,\n            \"humedad\": 67\n        },\n        {\n            \"fecha\": \"2022-05-06 06:00:00\",\n            \"max\": 11.78,\n            \"min\": 11.78,\n            \"sensacion_termica\": 10.92,\n            \"humedad\": 73\n        },\n        {\n            \"fecha\": \"2022-05-06 09:00:00\",\n            \"max\": 10.95,\n            \"min\": 10.95,\n            \"sensacion_termica\": 10.14,\n            \"humedad\": 78\n        }\n    ]\n}"
 				}
 			]
 		}
