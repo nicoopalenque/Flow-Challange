@@ -25,26 +25,22 @@ const apiWeather = async (city) => {
     };
   }
 
-  try {
-    const instance = axios.create({
-      baseURL: `${WEATHER_URL}/weather`,
-      params
+  return axios.get(`${WEATHER_URL}/weather`, { params })
+    .then((response) => {
+      return {
+        ciudad: response.data.name,
+        descripcion: response.data.weather[0].description,
+        clima: {
+          maxima: response.data.main.temp_max,
+          minima: response.data.main.temp_min,
+          sensacion_termica: response.data.main.feels_like,
+          humedad: response.data.main.humidity,
+        }
+      };
+    })
+    .catch((error) => {
+      return error.response.data;
     });
-
-    const resp = await instance.get();
-    return {
-      ciudad: resp.data.name,
-      descripcion: resp.data.weather[0].description,
-      clima: {
-        maxima: resp.data.main.temp_max,
-        minima: resp.data.main.temp_min,
-        sensacion_termica: resp.data.main.feels_like,
-        humedad: resp.data.main.humidity,
-      }
-    };
-  } catch (err) {
-    return err;
-  }
 };
 
 module.exports = { apiWeather };

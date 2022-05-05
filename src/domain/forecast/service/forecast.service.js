@@ -27,31 +27,52 @@ const apiForecast = async (city) => {
     };
   }
 
-  try {
-    const instance = axios.create({
-      baseURL: `${WEATHER_URL}/forecast`,
-      params
+  return axios.get(`${WEATHER_URL}/forecast`, { params })
+    .then((response) => {
+      const forecast = response.data.list.map((element) => {
+        const weather = {};
+        weather['fecha'] = element.dt_txt;
+        weather['descripcion'] = element.weather.descripction;
+        weather['max'] = element.main.temp_max;
+        weather['min'] = element.main.temp_min;
+        weather['sensacion_termica'] = element.main.feels_like;
+        weather['humedad'] = element.main.humidity;
+        return weather;
+      });
+      return {
+        pais: response.data.city.country,
+        ciudad: response.data.city.name,
+        clima: forecast
+      };
+    })
+    .catch((error) => {
+      return error.response.data;
     });
+  // try {
+  //   const instance = axios.create({
+  //     baseURL: `${WEATHER_URL}/forecast`,
+  //     params
+  //   });
 
-    const resp = await instance.get();
-    const forecast = resp.data.list.map((element) => {
-      const weather = {};
-      weather['fecha'] = element.dt_txt;
-      weather['descripcion'] = element.weather.descripction;
-      weather['max'] = element.main.temp_max;
-      weather['min'] = element.main.temp_min;
-      weather['sensacion_termica'] = element.main.feels_like;
-      weather['humedad'] = element.main.humidity;
-      return weather;
-    });
-    return {
-      pais: resp.data.city.country,
-      ciudad: resp.data.city.name,
-      clima: forecast
-    };
-  } catch (error) {
-    return error;
-  }
+  //   const resp = await instance.get();
+  //   const forecast = resp.data.list.map((element) => {
+  //     const weather = {};
+  //     weather['fecha'] = element.dt_txt;
+  //     weather['descripcion'] = element.weather.descripction;
+  //     weather['max'] = element.main.temp_max;
+  //     weather['min'] = element.main.temp_min;
+  //     weather['sensacion_termica'] = element.main.feels_like;
+  //     weather['humedad'] = element.main.humidity;
+  //     return weather;
+  //   });
+  //   return {
+  //     pais: resp.data.city.country,
+  //     ciudad: resp.data.city.name,
+  //     clima: forecast
+  //   };
+  // } catch (error) {
+  //   return error;
+  // }
 };
 
 module.exports = { apiForecast };
