@@ -2,13 +2,13 @@ const express = require('express');
 const cors = require('cors');
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
-
+const { SERVER_PORT, HOST, ROOT_PATH } = require('../common/constants/constants');
 class Server {
 
   constructor() {
     this.app = express();
-    this.port = process.env.PORT;
-    this.basePath = '/v1';
+    this.port = SERVER_PORT;
+    this.basePath = `${ROOT_PATH}`;
 
     // Middlewares
     this.middlewares();
@@ -48,8 +48,8 @@ class Server {
   }
 
   listen() {
-    this.app.listen(this.port, () => {
-      console.log(`Server running in PORT ${this.port}`);
+    this.app.listen(this.port, `${HOST}`, () => {
+      console.log(`Server running in PORT :: http://${HOST}:${this.port}`);
     });
   }
 
