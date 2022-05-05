@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  teco-flow-challenge:
+    container_name: teco-challenge
+    image: teco
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=development
+      - HOST=0.0.0.0
+      - PORT=3000
+      - API_ID=02993bf258dc8960cb4974810beb2fdf
+      - LANG=es
+      - UNITS=metric
+    

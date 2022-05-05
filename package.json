@@ -8,7 +8,9 @@
     "dev:watch": "nodemon ./src/app",
     "test": "jest --verbose",
     "coverage": "jest --coverage --verbose",
-    "lint": "eslint \"{src,test}/**/*.js\" --fix"
+    "lint": "eslint \"{src,test}/**/*.js\" --fix",
+    "docker:down": "docker-compose down",
+    "docker:up": "docker-compose up"
   },
   "author": "Rene Nicolas Palenque",
   "license": "ISC",
