@@ -131,13 +131,13 @@ GET /v1/location
 GET /v1/current
 
 # Devuelve los datos de ubicación actual según ciudad y el estado del tiempo actual.
-GET /v1/current/CityName
+GET /v1/current/{CityName}
 
 # Devuelve los datos de ubicación actual según ip-api y el estado del tiempo a 5 días.
 GET /v1/forecast
 
 # Devuelve los datos de ubicación actual según ciudad y el estado del tiempo a 5 días.
-GET /v1/forecast/CityName
+GET /v1/forecast/{CityName}
 ```
 
 ### Collection para postman
