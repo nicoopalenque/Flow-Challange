@@ -121,8 +121,6 @@ $ npm run docker:down
 ## Endpoints
 
 ```bash
-# Ver estado de la app
-GET /v1/status
 
 # Devuelve los datos de ubicación city según ip-api.
 GET /v1/location
